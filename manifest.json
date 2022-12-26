@@ -1,0 +1,39 @@
+{
+
+  "manifest_version": 2,
+  "name": "geekbang-save-pdf",
+  "version": "1.0",
+
+  "description": "极客时间企业版教程保存成pdf插件",
+
+  "icons": {
+    "48": "icons/pdf-48.png"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["*://*.geekbang.org/*"],
+      "js": ["content.js"]
+    }
+  ],
+    "page_action": {
+    "default_title": "\u4fdd\u5b58\u6587\u7ae0\u5185\u5bb9",
+    "default_icon": {
+      "96": "icons/pdf-96.png",
+      "48": "icons/pdf-48.png"
+    },
+    "show_matches": [
+      "*://*.geekbang.org/*"
+    ]
+  },
+  "background": {
+    "scripts": [
+      "background.js"
+    ]
+  },
+  "permissions": [
+    "tabs",
+    "notifications",
+    "*://*.geekbang.org/*"
+  ]
+}
